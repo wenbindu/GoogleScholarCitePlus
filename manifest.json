@@ -1,0 +1,41 @@
+{
+    "manifest_version": 3,
+    "name": "Cites Plus",
+    "version": "1.0",
+    "description": "Strength Google Scholar",
+    "permissions":
+    [
+        "activeTab", "scripting"
+    ],
+    "host_permissions": [
+        "https://api.crossref.org/*"
+    ],
+    "background":
+    {
+        "service_worker": "background.js"
+    },
+    "content_scripts":
+    [
+        {
+            "matches":
+            [
+                "https://scholar.google.com/*"
+            ],
+            "js":
+            [
+                "content-script.js"
+            ]
+        }
+    ],
+    "action":
+    {
+        "default_popup": "popup/popup.html"
+    },
+    "icons":
+    {
+        "16": "images/icon16.png",
+        "32": "images/icon32.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
+    }
+}
